@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            text-align: center;
+            padding: 20px;
+        }
+
+       
+
+        input{
+            padding: 20px;
+            margin: 20px ;
+            width: 20%;
+            height: 2vh;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #044e9e;
+            color: white;
+        }
+
+    
+        #result {
+            margin-top: 23px;
+            font-size: 25px;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="num1" placeholder="enter a number"><br><br>
+    <input type="number" id="num2" placeholder="enter a number"><br><br><br>
+
+    <button onclick="fun('add')">Add</button>
+    <button onclick="fun('sub')">Sub</button>
+    <button onclick="fun('mul')">Mul</button>
+    <button onclick="fun('div')">Divsion</button>
+    <p id="result"></p>
+    <script>
+        function fun(operate){
+        let num1= parseFloat(document.getElementById("num1").value);
+        let num2= parseFloat(document.getElementById("num2").value);
+        let resultdisplay= document.getElementById("result");
+          if(isNaN(num1)||isNaN(num2)){
+          resultdisplay.innerContent="please enter a number";
+          return;
+          }
+          
+            let result;
+            switch(operate){
+                case 'add':
+                    result=num1+num2;
+                    break;
+                    case 'sub':
+                    result=num1-num2;
+                    break;
+                    case 'mul':
+                    result=num1*num2;
+                    break; 
+                    case 'div':
+                    result=num1/num2;
+                    break;
+                    default:
+                        result="invalid operation"
+                    
+            }
+    
+            resultdisplay.textContent=`Result:${result}`;
+        
+
+
+        }
+    </script>
+
+    
+</body>
+</html>

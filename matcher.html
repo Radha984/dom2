@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Matcher</title>
+</head>
+<style>
+    body{
+        margin-top: 5%;
+        text-align: center;
+    }
+    input{
+        font-size: 20px;
+        width: 40%;
+        height: 5vh;
+    }
+    button{
+        font-size: 25px;
+        width: 10%;
+        height: 5vh;
+        
+
+    }
+    #matchResult{
+        font-size: 32px;
+    }
+</style>
+<body>
+
+    <h1>Password Matcher</h1>
+    <input type="password" id="password1" placeholder="Enter password"><br><br><br>
+    <input type="password" id="password2" placeholder="Confirm password"><br><br><br>
+    <button onclick="fun()">Check Match</button><br><br>
+    <div id="matchResult"></div>
+
+    <script>
+        function fun() {
+            let password1 = document.getElementById('password1').value;
+            let password2 = document.getElementById('password2').value;
+            let result = document.getElementById('matchResult');
+
+            if(password1===password2) {
+                result.innerText = "Passwords match!";
+                result.style.color = 'green';
+            }
+             else {
+                result.innerText = "Passwords do not match!";
+                result.style.color = 'red';
+            }
+        }
+    </script>
+
+</body>
+</html>
